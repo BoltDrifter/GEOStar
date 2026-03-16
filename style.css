@@ -1019,3 +1019,192 @@ section {
 .services-grid .service-card:nth-child(6) {
     transition-delay: 0.5s;
 }
+
+/* === Theme Toggle Button === */
+.theme-toggle {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--white);
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.1);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* === Light Mode Overrides === */
+/* Navigation */
+body.light-mode .header {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+body.light-mode .header.scrolled {
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+body.light-mode .logo-text {
+    color: var(--primary); /* Matte Black */
+}
+body.light-mode .nav-link {
+    color: var(--text-main);
+}
+body.light-mode .nav-link:hover {
+    color: var(--accent);
+}
+body.light-mode .hamburger,
+body.light-mode .hamburger::before,
+body.light-mode .hamburger::after {
+    background-color: var(--primary);
+}
+body.light-mode .theme-toggle {
+    color: var(--primary);
+    background-color: rgba(0,0,0,0.05);
+}
+body.light-mode .theme-toggle:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+@media (max-width: 992px) {
+    body.light-mode .nav {
+        background-color: #FFFFFF;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+    }
+}
+
+body.light-mode .hero-title {
+    color: var(--primary);
+    text-shadow: 0 4px 20px rgba(255,255,255,0.8);
+}
+body.light-mode .hero-subtitle {
+    color: var(--text-main);
+}
+body.light-mode .hero-overlay {
+    background: linear-gradient(to right, rgba(248, 250, 252, 0.7) 0%, rgba(248, 250, 252, 0.5) 40%, rgba(248, 250, 252, 0.1) 80%);
+}
+body.light-mode .trust-badge {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: var(--primary);
+}
+body.light-mode .hero-benefits .check {
+    background-color: rgba(225, 29, 72, 0.1);
+}
+body.light-mode .hero-benefits li {
+    color: var(--primary);
+}
+body.light-mode .btn-secondary {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+body.light-mode .btn-secondary:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+/* Dark Sections to Light (Services, Reviews) */
+body.light-mode .bg-dark {
+    background-color: #F3F4F6 !important; /* Lighter background substituting dark */
+}
+body.light-mode .bg-dark .text-light {
+    color: var(--primary) !important;
+}
+
+/* Service Cards */
+body.light-mode .service-card {
+    background-color: var(--white);
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+body.light-mode .service-card:hover {
+    background-color: #FFFFFF;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: rgba(225, 29, 72, 0.3);
+}
+body.light-mode .service-title {
+    color: var(--primary);
+}
+body.light-mode .service-desc {
+    color: var(--text-main);
+}
+
+/* Review Cards */
+body.light-mode .review-card {
+    background-color: var(--white);
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+body.light-mode .review-card::before {
+    color: rgba(0,0,0,0.05);
+}
+body.light-mode .review-text {
+    color: var(--text-main);
+}
+body.light-mode .reviewer-info h4 {
+    color: var(--primary);
+}
+body.light-mode .reviewer-info span {
+    color: var(--text-main);
+}
+
+/* Final CTA Section (Keep image but lighten overlay slightly) */
+body.light-mode .final-cta {
+    background: linear-gradient(rgba(249, 250, 251, 0.95), rgba(249, 250, 251, 0.95)), url('assets/hero-bg.png') center/cover fixed !important;
+}
+body.light-mode .final-cta .cta-title {
+    color: var(--primary);
+}
+body.light-mode .final-cta .cta-text {
+    color: var(--text-main);
+}
+body.light-mode .final-cta .btn-secondary {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+body.light-mode .final-cta .btn-secondary:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+/* Footer in Light Mode */
+body.light-mode .footer {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+body.light-mode .footer-logo .logo-text {
+    color: var(--primary);
+}
+body.light-mode .footer-col h4 {
+    color: var(--primary);
+}
+body.light-mode .footer-col h4::after {
+    background-color: var(--accent);
+}
+body.light-mode .footer-desc,
+body.light-mode .footer-links a,
+body.light-mode .footer-contact li,
+body.light-mode .footer-bottom {
+    color: var(--text-main);
+}
+body.light-mode .footer-links a:hover {
+    color: var(--accent);
+}
+body.light-mode .social-links a {
+    background-color: var(--white);
+    color: var(--primary);
+    border: 1px solid rgba(0,0,0,0.1);
+}
+body.light-mode .social-links a:hover {
+    background-color: var(--accent);
+    color: var(--white);
+    border-color: var(--accent);
+}
